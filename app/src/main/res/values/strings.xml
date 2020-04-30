@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">OrdenaApp</string>
+    <string name="feedbacknumber">Introduzca un numero</string>
+    <string name="btnOrdena">Ordena</string>
+    <string name="tvEnunciado">Tus numeros ordenados son:</string>
+    <string name="tvNumOrdenado"></string>
+    <string name="btnAgregar">Ordena</string>
+    <string name="ivFlecha"></string>
+    <string name="valorAgregado">Se agrego un valor</string>
+    <string name="faltaValor">Ingresa un numero por favor</string>
+    <string name="faltanDatos">Faltan agregar datos</string>
+    <string name="datosLlenos">Memoria llena</string>
+    <string name="datosGuardados">Se guardaron los datos correctamente</string>
+    <string name="btnRegresa">Repetir proceso</string>
+</resources>

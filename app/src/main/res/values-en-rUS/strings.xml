@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OrdenaApp</string>
+    <string name="feedbacknumber">Enter a number</string>
+    <string name = "btnOrdena">Sort</string>
+    <string name="tvEnunciado">Your ordered numbers are:</string>
+    <string name="tvNumOrdenado"></string>
+    <string name="btnAgregar">Add</string>
+    <string name="ivFlecha"></string>
+    <string name="valorAgregado">Added value</string>
+    <string name="faltaValor">Enter a number please</string>
+    <string name="faltanDatos">Add data missing</string>
+    <string name="datosLlenos">Full memory</string>
+    <string name="datosGuardados">The data was saved correctly</string>
+    <string name="btnRegresa">Repeat process</string>
+</resources>
