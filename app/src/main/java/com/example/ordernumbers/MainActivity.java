@@ -107,22 +107,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean validaFormulario()
     {
 
-        if(!etNumero.getText().toString().isEmpty() && i>3)
-        {
-            if(i == 4)
-            {
+        if(!etNumero.getText().toString().isEmpty() && i>3){
+            if(i == 4){
                 try {
                     Toast.makeText(MainActivity.this, getResources().getString(R.string.datosGuardados), Toast.LENGTH_SHORT).show();
 
-                }catch (Exception e)
-                {
+                }catch (Exception e){
                     Toast.makeText(MainActivity.this, getResources().getString(R.string.faltaValor), Toast.LENGTH_SHORT).show();
                     return false;
                 }
             }
         }
-        else
-        {
+        else{
             if(i != 4) {
                 etNumero.setError(getResources().getString(R.string.faltanDatos));
                 Toast.makeText(MainActivity.this, getResources().getString(R.string.faltanDatos), Toast.LENGTH_SHORT).show();

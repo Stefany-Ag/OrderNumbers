@@ -12,10 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
     public static final String Arreglo = "arreglo";
-    TextView tvOrdenaNumero;
-    TextView tvOrdenaNumero1;
-    TextView tvOrdenaNumero2;
-    TextView tvOrdenaNumero3;
+    TextView tvOrdenaNumero, tvOrdenaNumero1, tvOrdenaNumero2, tvOrdenaNumero3;
     int aux= 0;
     int[] numeros =  new int[4];
     @Override
@@ -23,10 +20,10 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.sacar,R.anim.mantener);
         setContentView(R.layout.activity_main2);
-        tvOrdenaNumero = (TextView)findViewById(R.id.tvNumOrdenado);
-        tvOrdenaNumero1 = (TextView)findViewById(R.id.tvNumOrdenado1);
-        tvOrdenaNumero2 = (TextView)findViewById(R.id.tvNumOrdenado2);
-        tvOrdenaNumero3 = (TextView)findViewById(R.id.tvNumOrdenado3);
+        tvOrdenaNumero = findViewById(R.id.tvNumOrdenado);
+        tvOrdenaNumero1 = findViewById(R.id.tvNumOrdenado1);
+        tvOrdenaNumero2 = findViewById(R.id.tvNumOrdenado2);
+        tvOrdenaNumero3 = findViewById(R.id.tvNumOrdenado3);
 
         Bundle bundle = new Bundle();
         bundle = getIntent().getExtras();
