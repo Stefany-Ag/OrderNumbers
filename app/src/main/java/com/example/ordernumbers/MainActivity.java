@@ -2,18 +2,24 @@ package com.example.ordernumbers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.ordernumbers.MainActivity2;
 import com.example.ordernumbers.R;
 
+/*
+    Facultad de Ingeniería
+    Computo móvil. Semestre 2020-1.
+    Programado por: Cynthia Estefanía Arreola González.
+*/
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     public static final String Arreglo = "arreglo";
     MediaPlayer mp;
@@ -28,9 +34,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
-
         mp = MediaPlayer.create(MainActivity.this, R.raw.howlsong);
         mp.start();
         etNumero = (EditText)findViewById(R.id.etNumero);
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        escondeTeclado(this);
         switch (v.getId()){
             case R.id.btnAgregar:
                 if(i==4)
@@ -74,39 +78,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
-
     @Override
     protected void onPause() {
         super.onPause();
         mp.pause();
     }
-
     @Override
     protected void onRestart() {
         super.onRestart();
         mp.start();
     }
-
     @Override
     protected void onResume() {
         super.onResume();
     }
-
     @Override
     protected void onStop() {
         super.onStop();
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
     }
-
     @Override
     protected void onStart() {
         super.onStart();
     }
-
     public boolean validaFormulario()
     {
 
@@ -126,7 +123,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else
         {
-            ;
             if(i != 4) {
                 etNumero.setError(getResources().getString(R.string.faltanDatos));
                 Toast.makeText(MainActivity.this, getResources().getString(R.string.faltanDatos), Toast.LENGTH_SHORT).show();
@@ -134,5 +130,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         return true;
+    }
+    public static void escondeTeclado(Activity activity){
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        View view = activity.getCurrentFocus();
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }

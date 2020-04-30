@@ -10,9 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ordernumbers.R;
-
 public class MainActivity2 extends AppCompatActivity {
+    public static final String Arreglo = "arreglo";
     TextView tvOrdenaNumero;
     TextView tvOrdenaNumero1;
     TextView tvOrdenaNumero2;
@@ -31,7 +30,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         Bundle bundle = new Bundle();
         bundle = getIntent().getExtras();
-        numeros = bundle.getIntArray("arreglo");
+        numeros = bundle.getIntArray(Arreglo);
         //Se implementa el metodo bubbleSort.
         for (int i = 0; i < numeros.length - 1; i++) {
             for (int j = i; j < numeros.length; j++) {
@@ -60,7 +59,7 @@ public class MainActivity2 extends AppCompatActivity {
     }
     public void Regresar(View view)
     {
-        Intent vuelve = new Intent(MainActivity2.this, com.example.ordenaapp.MainActivity.class);
+        Intent vuelve = new Intent(MainActivity2.this, MainActivity.class);
         startActivity(vuelve);
     }
 }
